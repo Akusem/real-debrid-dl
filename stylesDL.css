@@ -1,0 +1,15 @@
+/* Style buttons */
+.addButton {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  margin: 1em;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* Darker background on mouse-over */
+.addButton:hover {
+  background-color: RoyalBlue;
+}
