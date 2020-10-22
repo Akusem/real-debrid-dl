@@ -2,7 +2,7 @@ window.setInterval(() => {
   if (!dlButtonAlreadyPresent() && moreThanOneDlLink() && allLinksLoaded()) {
     retrieveLinksAndAddDlButton();
   }
-}, 2000);
+}, 1000);
 
 function dlButtonAlreadyPresent() {
   const button = document.getElementsByClassName("addButton");
