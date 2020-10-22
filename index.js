@@ -1,8 +1,6 @@
 window.setInterval(() => {
-  if (!dlButtonAlreadyPresent() && moreThanOneDlLink()) {
-    if (allLinksLoaded()) {
-      retrieveLinksAndAddDlButton();
-    }
+  if (!dlButtonAlreadyPresent() && moreThanOneDlLink() && allLinksLoaded()) {
+    retrieveLinksAndAddDlButton();
   }
 }, 2000);
 
@@ -18,7 +16,6 @@ function moreThanOneDlLink() {
   if (container.children.length > 1) {
     return true;
   }
-  return false;
 }
 
 function allLinksLoaded() {
@@ -26,15 +23,13 @@ function allLinksLoaded() {
 
   let linkNotGenerated = 0;
   for (let i = 0; i < container.children.length; i++) {
-    const el = container.children[i];
-    if (el.className === "link-not-generated") {
+    const individualLinkDiv = container.children[i];
+    if (individualLinkDiv.className === "link-not-generated") {
       linkNotGenerated++;
     }
   }
   if (linkNotGenerated === 0) {
     return true;
-  } else {
-    return false;
   }
 }
 
@@ -48,9 +43,9 @@ function getAllDlLinks() {
 
   const container = document.getElementById("links-container");
   for (let i = 0; i < container.children.length; i++) {
-    const el = container.children[i];
-    for (let j = 0; j < el.children.length; j++) {
-      const childrenEl = el.children[j];
+    const individualLinkDiv = container.children[i];
+    for (let j = 0; j < individualLinkDiv.children.length; j++) {
+      const childrenEl = individualLinkDiv.children[j];
       if (
         childrenEl.tagName === "A" &&
         childrenEl.textContent.startsWith("TELECHARGER")
