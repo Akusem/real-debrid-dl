@@ -60,9 +60,7 @@ function makeDlButton(toDl) {
   button.textContent = "Download all";
   button.className = "addButton";
   container.appendChild(button);
-  button.addEventListener("click", () => {
-    dlAll(toDl);
-  });
+  button.addEventListener("click", () => dlAll(toDl));
 }
 
 function dlAll(toDl) {
