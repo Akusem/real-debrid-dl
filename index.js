@@ -22,8 +22,7 @@ function allLinksLoaded() {
   const container = document.getElementById("links-container");
 
   let linkNotGenerated = 0;
-  for (let i = 0; i < container.children.length; i++) {
-    const individualLinkDiv = container.children[i];
+  for (let individualLinkDiv of container.children) {
     if (individualLinkDiv.className === "link-not-generated") {
       linkNotGenerated++;
     }
@@ -42,15 +41,13 @@ function getAllDlLinks() {
   let toDl = [];
 
   const container = document.getElementById("links-container");
-  for (let i = 0; i < container.children.length; i++) {
-    const individualLinkDiv = container.children[i];
-    for (let j = 0; j < individualLinkDiv.children.length; j++) {
-      const childrenEl = individualLinkDiv.children[j];
+  for (let individualLinkDiv of container.children) {
+    for (let possibleDlTag of individualLinkDiv.children) {
       if (
-        childrenEl.tagName === "A" &&
-        childrenEl.textContent.startsWith("TELECHARGER")
+        possibleDlTag.tagName === "A" &&
+        possibleDlTag.textContent.startsWith("TELECHARGER")
       ) {
-        toDl.push(childrenEl.href);
+        toDl.push(possibleDlTag.href);
       }
     }
   }
