@@ -1,6 +1,5 @@
 window.setInterval(() => {
   if (!dlButtonAlreadyPresent() && moreThanOneDlLink() && allLinksLoaded()) {
-    // if (moreThanOneDlLink() && allLinksLoaded()) {
     retrieveLinksAndAddDlButton();
   }
 }, 1000);

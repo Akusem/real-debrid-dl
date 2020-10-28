@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Real-Debrid download-all",
-    "version": "1.1.1",
+    "version": "1.1.2",
 
     "description": "Add a 'Download all' button in Real Debrid",
 
