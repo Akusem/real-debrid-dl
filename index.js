@@ -21,15 +21,12 @@ function moreThanOneDlLink() {
 function allLinksLoaded() {
   const container = document.getElementById("links-container");
 
-  let linkNotGenerated = 0;
   for (let individualLinkDiv of container.children) {
     if (individualLinkDiv.className === "link-not-generated") {
-      linkNotGenerated++;
+      return false;
     }
   }
-  if (linkNotGenerated === 0) {
-    return true;
-  }
+  return true;
 }
 
 function retrieveLinksAndAddDlButton() {
@@ -59,7 +56,6 @@ function getPageLanguage() {
   const lang_list = document.getElementsByClassName("lang_list");
   // Return trimed text contain in div.lang_list>a>strong
   const language = lang_list[0].children[0].children[0].textContent.trim();
-  console.log(language);
   return language;
 }
 
