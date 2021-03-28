@@ -7,7 +7,7 @@
 
     "content_scripts": [
         {
-            "matches": ["https://real-debrid.com/downloader"],
+            "matches": ["https://real-debrid.com/", "https://real-debrid.com/downloader"],
             "js": ["index.js"],
             "css": ["stylesDL.css"]
         }
